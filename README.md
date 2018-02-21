@@ -36,4 +36,7 @@ array(3) {
 
 # Test
 
+run:
+```console
 ./vendor/bin/phpunit tests/
+```
