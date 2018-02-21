@@ -2,7 +2,7 @@
   "name": "maalls/tweet-entities",
   "autoload": {
       "psr-4" : {
-          "Maalls\\" : "src/"
+          "Maalls\\" : "src/",
           "Maalls\\Test\\": "tests/"
       }
   },
