@@ -6,32 +6,17 @@ composer require maalls/tweet-entities
 
 # Example
 
+Parse tweet message and include URL informations (title, description, image) from OG Tags.
 ```php
-$entities = Maalls\TweetEntities:create("@someone this is a #tweet with url http://someurl.com");
-var_dump($entities);
-/* Expected results:
-array(3) {
-  'urls' =>
-  array(1) {
-    [0] =>
-    string(18) "http://someurl.com"
-  }
-  'hashtags' =>
-  array(2) {
-    [0] =>
-    string(6) "#tweet"
-    [1] =>
-    string(4) "#url"
-  }
-  'mentions' =>
-  array(2) {
-    [0] =>
-    string(8) "@someone"
-    [1] =>
-    string(11) "@someonelse"
-  }
-}
-*/
+$tweetEntities = new Maalls\TweetEntities();
+$entities = $this->create("@someone this is a #tweet with url http://someurl.com");
+```
+
+Only parse tweet.
+```php
+
+$entities = $tweetEntities->parse("@someone this is a #tweet with url http://someurl.com", true);
+
 ```
 
 # Test

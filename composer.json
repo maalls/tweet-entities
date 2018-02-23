@@ -9,5 +9,8 @@
 
   "require-dev": {
     "phpunit/phpunit": "^7"
+  },
+  "require": {
+    "maalls/og-tag-scraper": "^1.1"
   }
 }

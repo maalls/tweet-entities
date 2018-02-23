@@ -1,12 +1,52 @@
 <?php
 
 namespace Maalls;
-
+use Maalls\OGTagScraper\OGTagScraper;
 
 class TweetEntities 
 {
 
-    public static function create($tweet)
+    public $scraper;
+
+    public function __construct($scraper = null)
+    {
+
+        if($scraper) {
+        
+            $this->scraper = $scraper;
+
+        }
+        else {
+
+            $this->scraper = new OGTagScraper();
+
+        }
+
+    }
+
+    public function create($tweet)
+    {
+
+        $entities = $this->parse($tweet);
+
+        $urls = [];
+
+        foreach($entities["urls"] as $url) {
+
+            $og = $this->scraper->scrap($url);
+            $og["url"] = $url;
+
+            $urls[] = $og;
+
+        }
+
+        $entities["urls"] = $urls;
+
+        return $entities;
+
+    }
+
+    public function parse($tweet)
     {
 
         $entities = [
@@ -44,7 +84,7 @@ class TweetEntities
 
     }
 
-    public static function match($regex, $text) {
+    public function match($regex, $text) {
 
         preg_match_all("/" . $regex . "/ius", $text, $matches);
 

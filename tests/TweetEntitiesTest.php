@@ -10,10 +10,10 @@ use Maalls\TweetEntities;
 final class TweetEntitiesTest extends TestCase
 {
 
-    public function testCreate(): void
+    public function testParse(): void
     {
-
-        $entities = TweetEntities::create("@maalls @usn @hello_word hello world http://ultrasupernew.com #hello #hello_world #てすち・はしー");
+        $t = new TweetEntities();
+        $entities = $t->parse("@maalls @usn @hello_word hello world http://ultrasupernew.com #hello #hello_world #てすち・はしー");
         
         $results = [
             "urls" => ["http://ultrasupernew.com"],
@@ -24,6 +24,22 @@ final class TweetEntitiesTest extends TestCase
         $this->assertEquals($results, $entities);
 
         
+    }
+
+    public function testCreate()
+    {
+
+        $t = new TweetEntities();
+
+        $entities = $t->create("@maalls @usn @hello_word hello world http://ultrasupernew.com #hello #hello_world #てすち・はしー");
+
+
+        $this->assertTrue(isset($entities["urls"][0]));
+
+        $info = $entities["urls"][0];
+
+        $this->assertEquals("UltraSuperNew", $info["og:title"]);
+
     }
 
 }

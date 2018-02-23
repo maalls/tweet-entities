@@ -4,8 +4,122 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e5f7d2351042cab478e87b3b2e877614",
-    "packages": [],
+    "content-hash": "4ab4a38915ce1ca38013a643cca1aca6",
+    "packages": [
+        {
+            "name": "maalls/charset",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maalls/Charset.git",
+                "reference": "92c83635502f80439c5259723d75f82e433d2025"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maalls/Charset/zipball/92c83635502f80439c5259723d75f82e433d2025",
+                "reference": "92c83635502f80439c5259723d75f82e433d2025",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Maalls\\Charset": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Detect charset from HTTP or HTML.",
+            "time": "2014-10-28T04:59:20+00:00"
+        },
+        {
+            "name": "maalls/curl",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maalls/curl.git",
+                "reference": "9b7814c5a17e6d58132271194abdc13388b4b60d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maalls/curl/zipball/9b7814c5a17e6d58132271194abdc13388b4b60d",
+                "reference": "9b7814c5a17e6d58132271194abdc13388b4b60d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Maalls\\Curl": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "PHP class for curl.",
+            "time": "2014-10-28T06:26:21+00:00"
+        },
+        {
+            "name": "maalls/domdocument",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maalls/DomDocument.git",
+                "reference": "8bf302c72dcc38a8ff7118def97ba4636faabdbb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maalls/DomDocument/zipball/8bf302c72dcc38a8ff7118def97ba4636faabdbb",
+                "reference": "8bf302c72dcc38a8ff7118def97ba4636faabdbb",
+                "shasum": ""
+            },
+            "require": {
+                "maalls/charset": "~1.0.0",
+                "maalls/curl": "~1.0"
+            },
+            "suggest": {
+                "maalls/curl": "Allow making DomDocument from URL."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Maalls\\DomDocument": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2018-02-21T09:24:56+00:00"
+        },
+        {
+            "name": "maalls/og-tag-scraper",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maalls/og-tag-scraper.git",
+                "reference": "dc14be9bc78058ab8195ca8e29e687dd868c158a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maalls/og-tag-scraper/zipball/dc14be9bc78058ab8195ca8e29e687dd868c158a",
+                "reference": "dc14be9bc78058ab8195ca8e29e687dd868c158a",
+                "shasum": ""
+            },
+            "require": {
+                "maalls/domdocument": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Maalls\\OGTagScraper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2018-02-21T02:20:27+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
